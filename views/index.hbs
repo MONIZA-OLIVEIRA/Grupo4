@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Previsão do Tempo</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Previsão do Tempo</h1>
+
+  <form action="/search" method="GET">
+    <label for="cidade">Buscar por cidade:</label>
+    <input type="text" id="cidade" name="cidade" required>
+    <label for="bairro">Bairro:</label>
+    <input type="text" id="bairro" name="bairro" required>
+    <button type="submit">Buscar</button>
+  </form>
+
+  {{#if previsao}}
+  <section>
+    <h2> {{bairro}}</h2>
+    <p> {{previsao.location.country}}</p>
+    <p> {{ previsao.location.region}} </p>
+    <p>{{ previsao.location.localtime }}</p>
+    <img src="{{ previsao.current.weather_icons }}" alt="Condição do tempo">
+    <p>Condição: {{ previsao.current.weather_descriptions }}</p>
+    <p>Temperatura: {{ previsao.current.temperature }}°C</p>
+    <p>Sensação Térmica: {{ previsao.current.feelslike}}°C</p>
+    <p>Umidade do Ar: {{ previsao.current.humidity}}%</p>
+  </section>
+  {{/if}}
+
+</body>
+</html>
