@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css"/>
+  <title>Projeto 2</title>
+</head>
+<body>
+  <div class="btn_index" id="btn_index">
+    <h1>PREVISÃO DO TEMPO</h1>
+    Digite a Cidade que deseja consultar:
+    <input type="text" class="nomeUsuario" id="cidade" value="">
+    <button onclick="consultarTempo()" class="btn">clique aqui</button>
+  </div>
+  <div class="janela-modal" id="janela-modal">
+    <div class="modal" id="modal">
+      <button class="fechar" id="fechar" onclick="fecharModal()">X</button>
+      <h1 id="modalTitle">Previsão do tempo</h1>
+      <div id="modalContent">
+        <!-- Conteúdo da previsão do tempo será inserido aqui -->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/index.js"></script>
+</body>
+</html>

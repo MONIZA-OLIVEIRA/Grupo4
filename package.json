@@ -1,5 +1,5 @@
 {
-  "name": "projeto-consulta-clima",
+  "name": "GRUPO4PROJETO",
   "version": "1.0.0",
   "description": "Projeto de consulta de clima utilizando a API da weatherstack",
   "main": "server.js",
