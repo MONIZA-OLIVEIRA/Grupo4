@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Previsão do Tempo</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center">Previsão do Tempo</h1>
+
+    <form action="/search" method="GET" class="mb-4">
+      <div class="form-row align-items-center">
+        <div class="col-auto">
+          <label class="sr-only" for="cidade">Cidade</label>
+          <input type="text" id="cidade" name="cidade" class="form-control mb-2" placeholder="Cidade" required>
+        </div>
+        <div class="col-auto">
+          <label class="sr-only" for="bairro">Bairro</label>
+          <input type="text" id="bairro" name="bairro" class="form-control mb-2" placeholder="Bairro" required>
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-2">Buscar</button>
+        </div>
+      </div>
+    </form>
+
+    {{#if error}}
+    <div class="alert alert-danger" role="alert">
+      {{error}}
+    </div>
+    {{/if}}
+
+    {{#if previsao}}
+    <section>
+      <h2>{{bairro}}</h2>
+      <p>Cidade: {{previsao.cidade}}</p>
+      {{#each previsao.previsoes}}
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{this.city.name}}</h5>
+          <h5 class="card-title">{{this.dt_txt}}</h5>
+          <p class="card-text">Temperatura mínima: {{this.main.temp}} °C</p>
+          <p class="card-text">Temperatura mínima: {{this.main.temp_min}} °C</p>
+          <p class="card-text">Temperatura máxima: {{this.main.temp_max}} °C</p>
+          <p class="card-text">Descrição: {{this.weather.[0].description}}</p>
+          <img src="http://openweathermap.org/img/wn/{{this.weather.[0].icon}}@2x.png" alt="Ícone de previsão do tempo">
+        </div>
+      </div>
+      {{/each}}
+    </section>
+    {{/if}}
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
