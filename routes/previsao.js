@@ -1,5 +1,5 @@
 const axios = require('axios');
-
+const moment = require('moment');
 
 const descricaoEmPortugues = {
   "clear sky": "céu limpo",
@@ -20,12 +20,16 @@ async function getPrevisao(cidade, bairro) {
 
     const response = await axios.get(apiUrl);
     const previsao = response.data;
-
-    const previsoesFiltradas = previsao.list.slice(0, 9); // Exemplo: pegando as primeiras 9 previsões
+    console.log(previsao)
+    // Filtra apenas as previsões do dia
+    const previsoesFiltradas = previsao.list.slice(0, 2); // Exemplo: pegando as primeiras 9 previsões
 
     // Traduz as descrições do tempo para português
     previsoesFiltradas.forEach(previsao => {
       previsao.weather[0].description = descricaoEmPortugues[previsao.weather[0].description] || previsao.weather[0].description;
+      let date = moment(previsao.dt_txt);
+      date.subtract(6, 'hours');
+      previsao.dt_txt = date.format('DD/MM/YYYY HH:mm');
     });
 
     return {

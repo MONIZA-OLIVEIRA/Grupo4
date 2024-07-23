@@ -1,0 +1,9 @@
+# Ignorar arquivos e pastas do VS Code
+.vscode/
+
+# Ignorar dependências do Node.js
+node_modules/
+
+# Ignorar arquivos gerados pelo npm
+package-lock.json
+package.json

@@ -58,10 +58,10 @@
       <p>Cidade: {{previsao.cidade}}</p>
       {{#each previsao.previsoes}}
       <div class="card mb-3">
-        <div class="card-body">
+        <div class="card-body" >
           <h5 class="card-title">{{this.city.name}}</h5>
           <h5 class="card-title">{{this.dt_txt}}</h5>
-          <p class="card-text">Temperatura atual: {{this.main.temp}} °C</p>
+          <p class="card-text">Temperatura atual: <font style="font-weight: bold;">{{this.main.temp}} °C</font></p>
           <p class="card-text">Temperatura mínima: {{this.main.temp_min}} °C</p>
           <p class="card-text">Temperatura máxima: {{this.main.temp_max}} °C</p>
           <p class="card-text">Descrição: {{this.weather.[0].description}}</p>
