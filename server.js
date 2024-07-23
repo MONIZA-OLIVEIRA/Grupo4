@@ -21,6 +21,11 @@ app.get('/search', async (req, res) => {
   try {
     const cidade = req.query.cidade; // Obtém o nome da cidade do query string
     const bairro = req.query.bairro.toUpperCase();
+    const tratamentoRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
+
+     if (!tratamentoRegex.test(cidade)|| !tratamentoRegex.test(bairro)) { 
+       return res.status(400).send('Cidade ou bairro com erro de preenchimento. Por favor, preencha corretamente.');
+     }
     // Chama a função para obter os dados da previsão do tempo
     const previsao = await previsaoAPI.getPrevisao(cidade,bairro);
 
@@ -28,7 +33,7 @@ app.get('/search', async (req, res) => {
     res.render('index', { cidade, previsao, bairro });
   } catch (error) {
     console.error('Erro ao mostrar a previsão do tempo:', error);
-    res.status(500).send('Erro ao obter a previsão do tempo');
+    res.status(500).send('Cidade ou bairro com erro de preenchimento. Por favor, preencha corretamente.');
   }
 });
 
