@@ -1,34 +1,53 @@
+
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Previsão do Tempo</title>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Aplicativo de previsão do tempo</title>
 </head>
 <body>
-  <div class="container mt-5">
-    <h1 class="text-center">Previsão do Tempo</h1>
+    <header class="header">
+        <nav class="navbar">
+            <a href="#" onclick="index.html">Home</a>
+            <a href="#" onclick="abrirModal()">Previsão do tempo</a>
+        </nav>
 
-    <form action="/search" method="GET" class="mb-4">
-      <div class="form-row align-items-center">
-        <div class="col-auto">
-          <label class="sr-only" for="cidade">Cidade</label>
-          <input type="text" id="cidade" name="cidade" class="form-control mb-2" placeholder="Cidade" required>
-        </div>
-        <div class="col-auto">
-          <label class="sr-only" for="bairro">Bairro</label>
-          <input type="text" id="bairro" name="bairro" class="form-control mb-2" placeholder="Bairro" required>
-        </div>
-        <div class="col-auto">
-          <button type="submit" class="btn btn-primary mb-2">Buscar</button>
-        </div>
-      </div>
-    </form>
+    </header>
 
-    {{#if error}}
-    <div class="alert alert-danger" role="alert">
+
+    <!--
+    <nav class="info-body">
+        <p>
+            A previsão do tempo é de suma importância para o entendimento das condições climáticas de uma localidade. 
+            Ela fornece informações importantes que possibilitam antever as condições climáticas locais e, assim, atuar na prevenção de diferentes situações.
+        </p>
+    </nav>
+
+    -->  
+
+    <div class="btn" onclick="abrirModal()">Pesquisar</div>
+    
+    <div class="janela-modal" id="janela-modal">
+        <div class="modal" id="modal">
+            <button class="fechar" id="fechar">X</button>
+           <form action="/search" method="GET">    
+                <label>
+                        Digite a cidade escolhida:
+                        <input type="text" id="cidade" name="cidade" required>
+                    </label>
+                    <label>
+                        Digite o seu bairro:
+                     <input type="text" id="bairro" name="bairro" required>
+                </label>
+                <button type="submit" class="btn btn-primary mb-2">Buscar</button>
+            </form>
+          <div class="col-auto">
+          
+            </div>
+           {{#if error}}
+            <div class="alert alert-danger" role="alert">
       {{error}}
     </div>
     {{/if}}
@@ -42,7 +61,7 @@
         <div class="card-body">
           <h5 class="card-title">{{this.city.name}}</h5>
           <h5 class="card-title">{{this.dt_txt}}</h5>
-          <p class="card-text">Temperatura mínima: {{this.main.temp}} °C</p>
+          <p class="card-text">Temperatura atual: {{this.main.temp}} °C</p>
           <p class="card-text">Temperatura mínima: {{this.main.temp_min}} °C</p>
           <p class="card-text">Temperatura máxima: {{this.main.temp_max}} °C</p>
           <p class="card-text">Descrição: {{this.weather.[0].description}}</p>
@@ -52,10 +71,8 @@
       {{/each}}
     </section>
     {{/if}}
-  </div>
-
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        </div>
+    </div>
+<script src="/js/modal.js"></script>
 </body>
 </html>

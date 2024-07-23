@@ -13,7 +13,7 @@ app.use(express.static('public'));
 
 // Rota para renderizar a página inicial
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('index');//
 });
 
 // Rota para processar a busca da cidade

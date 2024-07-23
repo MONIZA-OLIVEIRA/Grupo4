@@ -1,21 +1,155 @@
-/* styles.css */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 20px;
-  }
-  
-  section {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 20px;
-  }
-  
-  h1, h2 {
-    color: #333;
-  }
-  
-  img {
-    max-width: 100%;
-  }
-  
+*
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    min-height: 100hv;
+    background-image: url("bgSky.jpg");
+    box-sizing: border-box;
+}
+
+.header
+{
+    position:fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    padding: 20px 100px;
+    background-color: rgba(255, 255, 255, 0.598);
+   
+}
+
+.navbar a
+{
+    font-size: 18px;
+    color:black;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+/*.info-body
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+
+}*/
+
+
+
+.btn 
+{
+    padding: 25px 60px;
+    display: inline;
+    background-color: black;
+    border-radius: 20px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0,5s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+}
+
+.btn:hover
+{
+    background-color: gray;
+}
+
+.janela-modal
+{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: rgba(128, 128, 128, 0.324);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    padding: 10px;
+}
+
+.modal 
+{
+    /*width: 300px;
+    margin:50px auto;*/
+    min-width: 450px;
+    min-height: 200px;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 20px;
+    flex-direction: row;
+}
+
+.btn-modal
+{
+    padding: 15px 40px;
+    display: inline;
+    background-color: rgba(121, 117, 117, 0.733);
+    border-radius: 20px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0,5s;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);  
+    z-index: 1;
+}
+
+.fechar
+{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border:0;
+    background-color: black;
+    color:white;
+    font-size: 20px;
+    cursor: pointer;
+}
+.janela-modal.abrir
+{
+    display:flex;
+}
+
+@keyframes abrirmodal {
+    from{
+        opacity: 0;
+        transform: translate3d(0,-20px,-5)
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0,0,0);
+
+    }
+}
+
+.abrir .modal
+{
+    animation: abrirmodal 0.2s;
+}
+
+@media(max-width:450px) {
+    #janela-modal {
+      border: none;
+      width: 40%;
+    }
+
+    body{
+        display: block;
+    }
+}
