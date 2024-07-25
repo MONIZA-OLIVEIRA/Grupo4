@@ -1,8 +1,17 @@
+
 function abrirModal(){
-    const modal = document.getElementById('janela-modal')
+    const janelaModal = document.getElementById('janela-modal')
     
-    modal.classList.add('abrir')
+    janelaModal.classList.add('abrir')
 
-    
-
+    janelaModal.addEventListener('click', (e) => {
+        if(e.target.id == 'fechar'){
+            janelaModal.classList.remove('abrir')    
+        }
+})
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+   
+    abrirModal();
+});

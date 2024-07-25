@@ -1,61 +1,171 @@
-*
-{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-body{
-    min-height: 100hv;
-    background-image: url("bgSky.jpg");
+
+
+/* estilo geral*/
+*{
+    margin: 0;
+    padding: 0;
+    margin-left: 15px;
     box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
 }
 
-.header
-{
-    position:fixed;
-    top:0;
-    left:0;
-    width: 100%;
-    padding: 20px 100px;
-    background-color: rgba(255, 255, 255, 0.598);
+body{
+    background-color: #000;
+    height:100vh ;
+}
+
+.interface{
+    max-width: 1280px;
+    margin-top: 15% auto;
+}
+
+.flex {
+    display: flex;
+}
+
+/* estilo cabeçalho*/
+
+h2.titulo{
+    color:#fff;
+    font-size: 38px;
+    text-align: center;
+}
+
+h2.titulo span{
+    color:#eace73;
+}
+
+header{
+    padding: 40px 4%;
+    background-color: #000;
+    
+
+}
+
+
+
+header a{
+    color:#979595;
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+}
+
+header a:hover{
+    color:#fff;
+    transform: scale(1.05);
+}
+
+header > .interface{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav{
+    list-style-type: none;  
+    
+}
+
+header nav ul{
+    list-style-type: none;
+}
+
+header nav ul li{
+    display: inline-block;
+    padding: 0 40px;
+}
+
+.btn-contato button{
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #eace73;
+    border:0;
+    border-radius: 30px;
+    cursor:pointer;
+    transition: .2s;
+
+
+}
+
+.btn-contato button:hover{
+    box-shadow: 0px 0px 8px #eace73;
+    transform: scale(1.05);
+}
+
+/* estilo do topo do site*/
+
+section.topo-do-site{
+    padding: 40px 4%;
+}
+
+section.topo-do-site .flex{
+    align-items: center;
+    justify-content: center;
+    gap:90px;
+}
+
+.topo-do-site h1{
+    color: #fff;
+    font-size:42px ;
+    line-height: 40px;
+}
+
+.topo-do-site h1 span{
+    color:#eace73;
+}
+
+.topo-do-site .txt-topo-site p {
+    color:#fff;
+    margin: 40px 0;
+    position:center;
+    margin-left: auto;
+    margin-right: auto;
    
 }
 
-.navbar a
-{
-    font-size: 18px;
-    color:black;
-    font-weight: 500;
-    text-decoration: none;
-    margin-left: 40px;
+/*estilo da previsão */
+
+section.previsao-container{
+    padding: 40px 4%;
 }
 
-/*.info-body
-{
+section.previsao-container .flex{
     display:flex;
+    text-align: center;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    gap:60px;
+   
+    
+} 
 
-
-}*/
-
-
-
-.btn 
-{
-    padding: 25px 60px;
-    display: inline;
-    background-color: black;
+.previsao-container .previsao-box{
+    color: #fff;
+    padding:  40px;
     border-radius: 20px;
-    color: white;
-    font-size: 20px;
+    margin-top: 45px;
+    transition: .2s;
     cursor: pointer;
-    transition: background-color 0,5s;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 1;
 }
+
+.previsao-container .previsao-box i{
+    color:#eace73;
+    font-size: 70px;
+}
+
+.previsao-container .previsao-box h3{
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+.previsao-container .previsao-box:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 8px #ffffff71;
+    
+}
+
+
 
 .btn:hover
 {
@@ -67,8 +177,9 @@ body{
     width: 100vw;
     height: 100vh;
     position: relative;
-    top: 0;
-    left: 0;
+    padding-top: 10px ;
+    top: 0%;
+    left: 0%;
     background-color: rgba(12, 12, 21, 0.816);
     display: none;
     align-items: center;
@@ -90,18 +201,19 @@ body{
     flex-direction: row;
 }
 
+
 .btn-modal
 {
-    padding: 15px 40px;
+    padding: 15px 25px;
     display: inline;
     background-color: rgba(121, 117, 117, 0.733);
     border-radius: 20px;
     color: white;
-    font-size: 20px;
+    font-size: 15px;
     cursor: pointer;
     transition: background-color 0,5s;
     position: absolute;
-    top: 70%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%,-50%);  
     z-index: 1;
@@ -126,6 +238,7 @@ body{
     display:flex;
 }
 
+
 @keyframes abrirmodal {
     from{
         opacity: 0;
@@ -133,7 +246,7 @@ body{
     }
     to{
         opacity: 1;
-        transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);  
 
     }
 }
@@ -143,17 +256,20 @@ body{
     animation: abrirmodal 0.2s;
 }
 
-@media(max-width:450px) {
-    #janela-modal {
-      border: none;
-      width: 40%;
-    }
+/*.topo-do-site{
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+}*/
 
-    body{
-        display: block;
+@keyframes flutuar{
+    0%{
+        top:0;
+
+    }
+    100%{
+        top: 30px;
     }
 }
 
-neg{
-    font-weight: bold;
-}
+/*estilo das especialidades */
+

@@ -4,6 +4,7 @@ const app = express();
 const port = 3000;
 const previsaoAPI = require('./routes/previsao');
 
+
 // Configuração do middleware e rotas
 app.engine('handlebars', engine({ extname: '.hbs', defaultLayout: 'index' }));
 app.set('view engine', '.hbs');
@@ -28,9 +29,11 @@ app.get('/search', async (req, res) => {
      }
     // Chama a função para obter os dados da previsão do tempo
     const previsao = await previsaoAPI.getPrevisao(cidade,bairro);
-
+   
     // Renderiza novamente o template index.hbs com os dados da cidade e da previsão do tempo
     res.render('index', { cidade, previsao, bairro });
+   
+
   } catch (error) {
     console.error('Erro ao mostrar a previsão do tempo:', error);
     res.status(500).send('Cidade ou bairro com erro de preenchimento. Por favor, preencha corretamente.');

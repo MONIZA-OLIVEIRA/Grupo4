@@ -1,38 +1,85 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--google fontes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!--boodstrap icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/style.css">
-    <title>Aplicativo de previsão do tempo</title>
+
+    <title>Wheather COMPASS</title>
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <a href="#" onclick="index.html">Home</a>
-            <a href="#" onclick="abrirModal()">Previsão do tempo</a>
-        </nav>
+    <header>
+        <div class="interface">
+            <div class="logo">
+                <a href="#">
+                    <img src="image/logo.png" alt="logo da empresa">
+                </a>
+            </div><!--logo-->
 
+            <nav class="menu-desktop">
+                <ul>
+                    <li><a href="#">Inicío</a></li>
+                    <li><a href="#">Sobre</a></li>
+                </ul>
+            </nav>
+
+           
+
+       
     </header>
 
+    <main> 
+        <section class="topo-do-site">
+            <div class="interface">
+               <div class="flex">
+                   <div class="txt-topo-site">
+                        <h1>A importância da previsão do tempo<span>.</span></h1>
+                        <p>A previsão do tempo é fundamental porque influencia diretamente diversas atividades humanas e decisões diárias. 
+                        Saber com antecedência como estará o clima permite que pessoas e empresas se preparem adequadamente, seja para planejar viagens, escolher roupas adequadas, realizar cultivos agrícolas,
+                        ou até mesmo para se proteger de eventos climáticos severos. Além disso, a previsão meteorológica auxilia na gestão de recursos naturais e na mitigação de desastres,
+                        fornecendo informações cruciais para a segurança pública e o bem-estar coletivo.</p>
 
-    <!--
-    <nav class="info-body">
-        <p>
-            A previsão do tempo é de suma importância para o entendimento das condições climáticas de uma localidade. 
-            Ela fornece informações importantes que possibilitam antever as condições climáticas locais e, assim, atuar na prevenção de diferentes situações.
-        </p>
-    </nav>
+                       
+                          
+                        
+                   </div> <!--toposite-->
 
-    -->  
+                   
+               </div><!--flex-->
+            </div><!--fiminterface-->
+        </section><!--fim topo do site-->
 
-    <div class="btn" onclick="abrirModal()">Pesquisar</div>
+        <section class="previsao-container">
+            <div class="interface">
+                <h2 class="titulo"> Veja a previsão <span>Em qualquer lugar!.</span></h2>
+                <div class="flex">
+                    <div class="previsao-box"  onclick="abrirModal()" >
+                        <i class="bi bi-file-earmark-richtext"></i>
+                        <h3>Previsão do tempo</h3>
+                        <div  onclick="abrirModal()">Clique aqui para pesquisar</div>
+                    </div></br>
+
+                    
+                    
+                    
+
+                </div><!--flex-->
+            </div><!--interface-->    
+        </section><!--especialidades -->
+    </main>
+
+    <!--<div class="btn" onclick="abrirModal()">Pesquisar</div>-->
     
     <div class="janela-modal" id="janela-modal">
         <div class="modal" id="modal">
             <button class="fechar" id="fechar">X</button>
-           <form action="/search" method="GET">    
+           <form action="/search" method="GET" id="form-modal">    
                 <label>
                         Digite a cidade escolhida:
                         <input type="text" id="cidade" name="cidade" required>
@@ -41,38 +88,48 @@
                         Digite o seu bairro:
                      <input type="text" id="bairro" name="bairro" required>
                 </label>
-                <button type="submit" class="btn btn-primary mb-2">Buscar</button>
+                <button type="submit" id="btn-modal">Buscar</button>
             </form>
+            
           <div class="col-auto">
           
             </div>
            {{#if error}}
             <div class="alert alert-danger" role="alert">
       {{error}}
-    </div>
+
     {{/if}}
 
     {{#if previsao}}
-    <section>
+    <section class="container-modal">
       <h2>{{bairro}}</h2>
       <p>Cidade: {{previsao.cidade}}</p>
       {{#each previsao.previsoes}}
-      <div class="card mb-3">
-        <div class="card-body" >
-          <h5 class="card-title">{{this.city.name}}</h5>
-          <h5 class="card-title">{{this.dt_txt}}</h5>
-          <p class="card-text">Temperatura atual: <font style="font-weight: bold;">{{this.main.temp}} °C</font></p>
-          <p class="card-text">Temperatura mínima: {{this.main.temp_min}} °C</p>
-          <p class="card-text">Temperatura máxima: {{this.main.temp_max}} °C</p>
-          <p class="card-text">Descrição: {{this.weather.[0].description}}</p>
-          <img src="http://openweathermap.org/img/wn/{{this.weather.[0].icon}}@2x.png" alt="Ícone de previsão do tempo">
-        </div>
-      </div>
+       
+           
+            <div class="card mb-3">
+            
+                <div class="card-body" >
+                <h5 class="card-title">{{this.city.name}}</h5>
+                <h5 class="card-title">{{this.dt_txt}}</h5>
+                <p class="card-text">Temperatura atual: <font style="font-weight: bold;">{{this.main.temp}} °C</font></p>
+                <p class="card-text">Temperatura mínima: {{this.main.temp_min}} °C</p>
+                <p class="card-text">Temperatura máxima: {{this.main.temp_max}} °C</p>
+                <p class="card-text">Descrição: {{this.weather.[0].description}}</p>
+                <img src="http://openweathermap.org/img/wn/{{this.weather.[0].icon}}@2x.png" alt="Ícone de previsão do tempo">
+            </div> 
+     </div>
+    
       {{/each}}
     </section>
     {{/if}}
         </div>
-    </div>
+</div>
+
+
+    
 <script src="/js/modal.js"></script>
+
+
 </body>
 </html>
