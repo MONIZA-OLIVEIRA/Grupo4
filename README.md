@@ -248,17 +248,48 @@ De uma forma simples a computação na `Nuvem`, é uma tecnologia que permite ac
 
 Na presente implementação foi utilizada a `Nuvem` da **AWS - Amazon Web Services**.
 
-Para usuários corporativos se recomenda a utilização da ferramenta *AWS Well-Architected Tool* que efetua uma pré-avaliação do seu ambiente, apontando oportunidades de melhoria. Este <a href="https://github.com/Compass-pb-aws-2024-JUNHO/sprints-2-3-pb-aws-junho/blob/Grupo-4/src/public/assets/images/FundoCeu.jpg" target="_blank">Relatório</a> representa um exemplo da utilização desta ferramenta.
+Para usuários corporativos se recomenda a utilização da ferramenta <a href="https://us-east-1.console.aws.amazon.com/wellarchitected/home?region=us-east-1#/workloads" target="_blank">AWS Well-Architected Tool</a> que efetua uma pré-avaliação do seu ambiente, apontando oportunidades de melhoria. Importante ressaltar a necessidade da escolha correta da *Região* aonde se pretende instalar a infraestrutura, no `link`disponibilizado se está trabalhando com o *Norte da Virgínia*.
+
+Este <a href="https://github.com/MONIZA-OLIVEIRA/Grupo4/tree/main/public/assets/docs/G4AWSInfraestructure_wellarchitected.pdf" target="_blank">Relatório</a> representa um exemplo da utilização desta ferramenta.
+
+Outro ponta a ser considerado é a possibilidade de se obter uma estimativa de custos da infraestrutura selecionada utilizando-se a <a href="https://calculator.aws/#/" target="_blank">Calculadora de Custos</a>. Um exemplo de estimativa obtido por meio desta calculadora se encontra em <a href="https://github.com/MONIZA-OLIVEIRA/Grupo4/tree/main/public/assets/docs/G4 EC2 - Calculadora de Preços da AWS.pdf" target="_blank">Estimativa de Custos</a>. Também neste caso é importante atentar para a *Região* uma vez que os Custos variam de *Região* para *Região*.
+
 
 ## Dificuldades/Pontos Fracos<a name="fraquezas"></a>
 
+No desenvolvimento deste **projeto** foram observadas algumas dificuldades relatadas nos itens a seguir:
+* No *Front-End* foi utilizado um `modal` e se observou uma dificuldade entre o `modal` e a funççao utilizada no *botão de Busca*. Após ajustes e tentativas o problema foi resolvido com sucesso;
+* No *Back-end* a documentação da **API** estava bem detalhada, o que ajudou muito no desenvolvimento, se observaqndo uma relativa dificuldad com relação à formatação da *data* retornada e também com a necessidade de se limitar o número de linhas retornadas;
+* Sem sombras de dúvidas, a configuração da *infraestrutura da Nuvem AWS* foi a que consumiu maior dedicação, principalmente, com relação à aplicação do **sdrviço** *Beanstalk*.
 
 ## Pontos Fortes<a name="forcas"></a>
 
+A experiência da equipe foi muito boa e por isso temos muitos pontos a destacar:
+* Primeiro com relação à organização dos trabalhos foi utilizada a ferramenta de *métodos ágeis* denominada **Trello**. Abaixo esta exibida uma imagem extraída do **Trello**;<br><br>
+<div align="center">
+<img src="./public/assets/images/trello.png" align="justify"/>
+</div>
+
+
+* <img src="./public/assets/images/pessoas.png" align="left" height="50px" />  **Liderança Compartilhada** foi uma marca observada na equipe. Não houve a imposição de um `Líder`; conforme a situação exigia, ocorria o surgimento de uma liderança natural com habilidades para conduzir os trabalhos e superar as dificuldades que se apresentavam. Outro quesito crucial com relação às pessoas se trata do alto grau de **empatia** observado, não se relatando nenhuma desavença, discussão acalorada e discórdia no seio da equipe;
+
+* <img src="./public/assets/images/autonomia.png" align="left" height="50px" />  Cada membro da equipe foi cioso e consciente do que o seu trabalho representava para os resultados do projeto;
+
+* <img src="./public/assets/images/persistencia.png" align="left" height="50px" />  Todo e qualquer problema e/ou dificuldade era abraçado pela equipe em um esforço conjunto para sua solução;
+
+* <img src="./public/assets/images/compartilhar.png" align="left" height="50px" />  O compartilhamento do conhecimento foi a tônica da equipe, inclusive estendendo este compartilhamento aos demais grupos conforme solicitação;
+
+* <img src="./public/assets/images/comunicar.png" align="left" height="50px" />  A comunicação durante o projeto foi farta, clara e objetiva. Através da *ferramenta* **Trello**, utilizando reuniões *online* e mesmo através de `Grupo de WhatsApp` a equipe manteve alto grau de comunicação, permitindo trqansparência de todas as atividades desenvolvidas e mantendo a equipe no mesmo nível de evolução do projeto;
+
+* <img src="./public/assets/images/foco.png" align="left" height="50px" />  O foco na disponibilização de uma ferramenta prática, operacional e funcional foi importqante para evoluir na busca de uma aplicação segura e contínua;
+
+* <img src="./public/assets/images/senso.png" align="left" height="50px" />  Em nenhum momento a equipe se descuidou com relação ao prazo estabelecido, sem contudo, pular etapas e/ou mesmo se utilizar de artifícios pouco técnicos para a solução das dificuldades apresentadas;
+
+* <img src="./public/assets/images/descomplicado.png" align="left" height="50px" />  Por fim, e não menos importante, a simplicidade sem perder a qualidade se tornou uma bandeira da equipe, em prol de uma solução eficiente, com custos controlados, factível de ser implementada, fácil para o usuário final e útil para todos.
 
 ## Oportunidades de Melhorias)<a name="melhorias"></a>
 
-
+A equipe desenvolvedora acredita que oportunidades de melhorias sempre existirão, no entanto, no presente processo, ficou demonstrado que a equipe buscou formas de evoluir a solução, seja pelo aspecto da segurança, seja sob o aspecto da continuidade operacional. Toda e qualquer sugestão poderá ser encaminhada para os membros da equipe que desde já agradecem.
 
 ## Autor(es)<a name="autores"></a>
 
